@@ -80,3 +80,11 @@ create a `jsconfig.json` file in the root of the project, then, add the below co
     });
 
 ---
+
+## afterEach(fn, timeout)
+
+> Runs a function after each one of the tests in this file completes. If the function returns a promise or is a generator, Jest waits for that promise to resolve before continuing.
+
+    afterEach(() => {
+        component.unmount();
+    })

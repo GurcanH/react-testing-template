@@ -10,6 +10,10 @@ beforeEach(() => {
   component = shallow(<App />);
 });
 
+afterEach(() => {
+  component.unmount();
+});
+
 it('shows a comment box', () => {
   expect(component.find(CommentBox).length).toEqual(1);
 });
