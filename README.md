@@ -62,6 +62,21 @@ create a `jsconfig.json` file in the root of the project, then, add the below co
 
 ---
 
-**JSDOM** is a library which parses and interacts with assembled HTML just like a browser.
+## beforeEach(fn, timeout)
+
+> Runs a function before each of the tests in this file runs. If the function returns a promise or is a generator, Jest waits for that promise to resolve before running the test.
+
+    let component;
+    beforeEach(() => {
+      component = shallow(<App />);
+    });
+
+    it('shows a comment box', () => {
+      expect(component.find(CommentBox).length).toEqual(1);
+    });
+
+    it('shows a comment list', () => {
+      expect(component.find(CommentList).length).toEqual(1);
+    });
 
 ---
