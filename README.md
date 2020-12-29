@@ -49,6 +49,19 @@ it('shows a comment box', () => {
 
 ---
 
+## Using Absolute Path Imports
+
+create a `jsconfig.json` file in the root of the project, then, add the below code to it
+
+    {
+      "compilerOptions": {
+        "baseUrl": "src"
+      },
+      "include": ["src"]
+    }
+
+---
+
 **JSDOM** is a library which parses and interacts with assembled HTML just like a browser.
 
 ---
