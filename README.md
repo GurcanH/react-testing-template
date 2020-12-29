@@ -1,6 +1,16 @@
 # React Testing App
 
-**toContain(item):** Use `.toContain` when you want to check that an item is in an array.
+## test(name, fn, timeout)
+
+`it` is an alias of `test`.
+
+## ![it diagram](/src/assets/diagrams/it.png)
+
+## expect(value)
+
+The `expect` function is used every time you want to test a value.
+
+![expext diagram](/src/assets/diagrams/expect.png)
 
 ```
 it('renders without crashing', () => {
@@ -12,6 +22,10 @@ it('renders without crashing', () => {
     ReactDOM.unmountComponentAtNode(div);
 });
 ```
+
+---
+
+**toContain(item):** Use `.toContain` when you want to check that an item is in an array.
 
 ---
 
