@@ -37,7 +37,15 @@ it('renders without crashing', () => {
 >
 > Enzyme's API is meant to be intuitive and flexible by mimicking jQuery's API for DOM manipulation and traversal.
 
-## ![enzyme diagram](/src/assets/diagrams/enzyme.png)
+![enzyme diagram](/src/assets/diagrams/enzyme.png)
+
+```
+it('shows a comment box', () => {
+  const component = shallow(<App />);
+
+  expect(component.find(CommentBox).length).toEqual(1);
+});
+```
 
 ---
 
