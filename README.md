@@ -14,3 +14,7 @@ it('renders without crashing', () => {
 ```
 
 ---
+
+**JSDOM** is a library which parses and interacts with assembled HTML just like a browser.
+
+---

@@ -3,4 +3,13 @@ import ReactDOM from 'react';
 
 import App from '../App';
 
-it('shows a comment box', () => {});
+it('shows a comment box', () => {
+  const div = document.create('div');
+
+  ReactDOM.render(<App />, div);
+
+  // Looks inside the div
+  // and checks to see if the CommentBox is in there
+
+  ReactDOM.unmountComponentAtNode(div);
+});
