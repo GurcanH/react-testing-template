@@ -2,6 +2,10 @@
 
 ## Jest
 
+> Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
+>
+> It works with projects using: Babel, TypeScript, Node, React, Angular, Vue and more!
+
 ### test(name, fn, timeout)
 
 `it` is an alias of `test`.
@@ -27,7 +31,11 @@ it('renders without crashing', () => {
 
 ---
 
-**toContain(item):** Use `.toContain` when you want to check that an item is in an array.
+## Enzym
+
+> Enzyme is a JavaScript Testing utility for React that makes it easier to test your React Components' output. You can also manipulate, traverse, and in some ways simulate runtime given the output.
+>
+> Enzyme's API is meant to be intuitive and flexible by mimicking jQuery's API for DOM manipulation and traversal.
 
 ---
 
