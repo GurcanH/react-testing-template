@@ -4,11 +4,11 @@
 
 ```
 it('renders without crashing', () => {
-const div = document.createElement('div');
-ReactDOM.render(<App />, div);
+    const div = document.createElement('div');
+    ReactDOM.render(<App />, div);
 
-expect(div.innerHTML).toContain('Hi there!');
+    expect(div.innerHTML).toContain('Hi there!');
 
-ReactDOM.unmountComponentAtNode(div);
+    ReactDOM.unmountComponentAtNode(div);
 });
 ```
