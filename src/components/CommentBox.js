@@ -1,6 +1,17 @@
-/* eslint-disable import/no-anonymous-default-export */
-import React from 'react';
+import React, { Component } from 'react';
 
-export default () => {
-  return <div>Comment-Box Component</div>;
-};
+class CommentBox extends Component {
+  render() {
+    return (
+      <form>
+        <h4>Add a Comment</h4>
+        <textarea />
+        <div>
+          <button>Submit Comment</button>
+        </div>
+      </form>
+    );
+  }
+}
+
+export default CommentBox;
