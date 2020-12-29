@@ -1,6 +1,6 @@
 # React Testing App
 
-**toContain():** Check if there is `div` that contains 'Hi there' text!
+**toContain(item):** Use `.toContain` when you want to check that an item is in an array.
 
 ```it('renders without crashing', () => {
 const div = document.createElement('div');
