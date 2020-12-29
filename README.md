@@ -35,10 +35,20 @@ it('renders without crashing', () => {
 
 > Runs a function before each of the tests in this file runs. If the function returns a promise or is a generator, Jest waits for that promise to resolve before running the test.
 
+---
+
+### afterEach(fn, timeout)
+
+> Runs a function after each one of the tests in this file completes. If the function returns a promise or is a generator, Jest waits for that promise to resolve before continuing.
+
     let component;
     beforeEach(() => {
       component = shallow(<App />);
     });
+
+    afterEach(() => {
+      component.unmount();
+    })
 
     it('shows a comment box', () => {
       expect(component.find(CommentBox).length).toEqual(1);
@@ -47,16 +57,6 @@ it('renders without crashing', () => {
     it('shows a comment list', () => {
       expect(component.find(CommentList).length).toEqual(1);
     });
-
----
-
-### afterEach(fn, timeout)
-
-> Runs a function after each one of the tests in this file completes. If the function returns a promise or is a generator, Jest waits for that promise to resolve before continuing.
-
-    afterEach(() => {
-        component.unmount();
-    })
 
 ---
 
@@ -86,11 +86,6 @@ it('shows a comment box', () => {
 
 > Simulate events on the root node in the wrapper. It must be a single-node wrapper.
 
-> Arguments
-
-event (String): The event name to be simulated
-...args (Any [optional]): A mock event object that will get passed through to the event handlers.
-
 ---
 
 ### .update() => Self
@@ -100,6 +95,25 @@ event (String): The event name to be simulated
 > NOTE: can only be called on a wrapper instance that is also the root instance.
 
 > NOTE: this does not force a re-render. Use wrapper.setProps({}) to force a re-render.
+
+---
+
+### .prop(key) => Any
+
+> Returns the prop value for the root node of the wrapper with the provided key. It must be a single-node wrapper.
+
+> NOTE: When called on a shallow wrapper, .prop(key) will return values for props on the root node that the component renders, not the component itself. To return the props for the entire React component, use wrapper.instance().props.
+> See .instance() => ReactComponent
+
+    it('has a text area that users can type in', () => {
+      component.find('textarea').simulate('change', {
+        target: { value: 'new comment' }
+      });
+
+      component.update();
+
+      expect(component.find('textarea').prop('value')).toEqual('new comment');
+    });
 
 ---
 

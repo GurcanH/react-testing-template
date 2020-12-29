@@ -23,4 +23,6 @@ it('has a text area that users can type in', () => {
   });
 
   component.update();
+
+  expect(component.find('textarea').prop('value')).toEqual('new comment');
 });
