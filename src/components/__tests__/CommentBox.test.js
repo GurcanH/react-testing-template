@@ -26,3 +26,17 @@ it('has a text area that users can type in', () => {
 
   expect(component.find('textarea').prop('value')).toEqual('new comment');
 });
+
+it('when form is submitted, text area gets emptied', () => {
+  component.find('textarea').simulate('change', {
+    target: { value: 'new comment' }
+  });
+  component.update();
+
+  expect(component.find('textarea').prop('value')).toEqual('new comment');
+
+  component.find('form').simulate('submit');
+  component.update();
+
+  expect(component.find('textarea').prop('value')).toEqual('');
+});
