@@ -18,15 +18,23 @@ The `expect` function is used every time you want to test a value.
 
 ![expect diagram](/src/assets/diagrams/expect.png)
 
+### describe(name, fn)
+
+`describe(name, fn)` creates a block that groups together several related tests. F
+
 ```
-it('renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<App />, div);
+describe('App Element', () => {
+  it('renders without crashing', () => {
+      const div = document.createElement('div');
+      ReactDOM.render(<App />, div);
 
-    expect(div.innerHTML).toContain('Hi there!');
+      expect(div.innerHTML).toContain('Hi there!');
 
-    ReactDOM.unmountComponentAtNode(div);
-});
+      ReactDOM.unmountComponentAtNode(div);
+  });
+
+  ...
+}
 ```
 
 ---
