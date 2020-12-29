@@ -1,6 +1,6 @@
 # React Testing App
 
-<span style="color:cadetblue">**toContain():** Check if there is `div` that contains 'Hi there' text!</span>.
+**toContain():** Check if there is `div` that contains 'Hi there' text!
 
 ```it('renders without crashing', () => {
 const div = document.createElement('div');
