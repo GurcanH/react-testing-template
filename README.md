@@ -1,12 +1,14 @@
 # React Testing App
 
-## test(name, fn, timeout)
+## Jest
+
+### test(name, fn, timeout)
 
 `it` is an alias of `test`.
 
-## ![it diagram](/src/assets/diagrams/it.png)
+![it diagram](/src/assets/diagrams/it.png)
 
-## expect(value)
+### expect(value)
 
 The `expect` function is used every time you want to test a value.
 
