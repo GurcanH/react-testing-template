@@ -21,4 +21,6 @@ it('has a text area that users can type in', () => {
   component.find('textarea').simulate('change', {
     target: { value: 'new comment' }
   });
+
+  component.update();
 });

@@ -91,9 +91,15 @@ it('shows a comment box', () => {
 event (String): The event name to be simulated
 ...args (Any [optional]): A mock event object that will get passed through to the event handlers.
 
-> Returns
+---
 
-ShallowWrapper: Returns itself.
+### .update() => Self
+
+> Syncs the enzyme component tree snapshot with the react component tree. Useful to run before checking the render output if something external may be updating the state of the component somewhere.
+
+> NOTE: can only be called on a wrapper instance that is also the root instance.
+
+> NOTE: this does not force a re-render. Use wrapper.setProps({}) to force a re-render.
 
 ---
 
