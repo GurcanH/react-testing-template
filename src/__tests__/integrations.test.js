@@ -17,18 +17,20 @@ afterEach(() => {
   moxios.uninstall();
 });
 
-it('can fetch a list of comments and display them', () => {
-  // Attempt to render the *entire* app
+it('can fetch a list of comments and display them', done => {
   const component = mount(
     <Root>
       <App />
     </Root>
   );
-  // find the 'fetchComments' button and click it
 
   component.find('.fetch-comments').simulate('click');
 
-  // Expect to find a list of comments!
+  setTimeout(() => {
+    component.update();
+    expect(component.find('li').length).toEqual(2);
 
-  expect(component.find('li').length).toEqual(2);
+    done();
+    component.unmount();
+  }, 100);
 });
