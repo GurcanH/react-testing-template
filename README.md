@@ -18,36 +18,23 @@ The `expect` function is used every time you want to test a value.
 
 ![expect diagram](/src/assets/diagrams/expect.png)
 
+---
+
 ### describe(name, fn)
 
 `describe(name, fn)` creates a block that groups together several related tests. F
-
-```
-describe('App Element', () => {
-  it('renders without crashing', () => {
-      const div = document.createElement('div');
-      ReactDOM.render(<App />, div);
-
-      expect(div.innerHTML).toContain('Hi there!');
-
-      ReactDOM.unmountComponentAtNode(div);
-  });
-
-  ...
-}
-```
 
 ---
 
 ### beforeEach(fn, timeout)
 
-> Runs a function before each of the tests in this file runs. If the function returns a promise or is a generator, Jest waits for that promise to resolve before running the test.
+Runs a function before each of the tests in this file runs. If the function returns a promise or is a generator, Jest waits for that promise to resolve before running the test.
 
 ---
 
 ### afterEach(fn, timeout)
 
-> Runs a function after each one of the tests in this file completes. If the function returns a promise or is a generator, Jest waits for that promise to resolve before continuing.
+Runs a function after each one of the tests in this file completes. If the function returns a promise or is a generator, Jest waits for that promise to resolve before continuing.
 
     let component;
     beforeEach(() => {
@@ -57,14 +44,15 @@ describe('App Element', () => {
     afterEach(() => {
       component.unmount();
     })
+    describe('Show Components', () => {
+      it('shows a comment box', () => {
+        expect(component.find(CommentBox).length).toEqual(1);
+      });
 
-    it('shows a comment box', () => {
-      expect(component.find(CommentBox).length).toEqual(1);
-    });
-
-    it('shows a comment list', () => {
-      expect(component.find(CommentList).length).toEqual(1);
-    });
+      it('shows a comment list', () => {
+        expect(component.find(CommentList).length).toEqual(1);
+      });
+    }
 
 ---
 
