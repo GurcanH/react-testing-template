@@ -196,3 +196,29 @@ create a `jsconfig.json` file in the root of the project, then, add the below co
         expect(action.payload).toEqual('New Comment');
       });
     });
+
+---
+
+## Initializing Redux State
+
+    import React from 'react';
+    import { mount } from 'enzyme';
+
+    import Root from 'Root';
+    import CommentList from 'components/CommentList';
+
+    let component;
+
+    beforeEach(() => {
+      const initialState = {
+        comments: ['Comment 1', 'Comment 2']
+      };
+      component = mount(
+        <Root initialState={initialState}>
+          <CommentList />
+        </Root>
+      );
+    });
+    it('creates one LI per comment', () => {
+      expect(component.find('li').length).toEqual(2);
+    });
