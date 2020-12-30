@@ -26,11 +26,11 @@ it('can fetch a list of comments and display them', done => {
 
   component.find('.fetch-comments').simulate('click');
 
-  setTimeout(() => {
+  moxios.wait(() => {
     component.update();
     expect(component.find('li').length).toEqual(2);
 
     done();
     component.unmount();
-  }, 100);
+  });
 });
