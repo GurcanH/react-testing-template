@@ -180,8 +180,8 @@ create a `jsconfig.json` file in the root of the project, then, add the below co
 
 ## Testing Actions Sample
 
-import { saveComment } from 'actions';
-import { SAVE_COMMENT } from 'actions/types';
+    import { saveComment } from 'actions';
+    import { SAVE_COMMENT } from 'actions/types';
 
     describe('saveComment', () => {
       it('has the correct type', () => {
