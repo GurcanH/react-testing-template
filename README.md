@@ -129,3 +129,31 @@ create a `jsconfig.json` file in the root of the project, then, add the below co
     }
 
 ---
+
+## Redux Tests
+
+> For testing Redux, the Provider should be created as a helper function and this function should wrap the components!!!
+
+    import React from 'react';
+    import { Provider } from 'react-redux';
+    import { createStore } from 'redux';
+
+    import reducers from 'reducers';
+
+    const Root = props => {
+      return (
+        <Provider store={createStore(reducers, {})}>{props.children}</Provider>
+      );
+    };
+
+    export default Root;
+
+    ///////////////////////////////////////
+    let component;
+    beforeEach(() => {
+      component = mount(
+        <Root>
+          <CommentBox />
+        </Root>
+      );
+    });
